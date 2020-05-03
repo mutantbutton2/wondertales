@@ -2,9 +2,7 @@ package wonderland.alice.component;
 
 import wonderland.alice.component.card.character.Character;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 import static java.util.Collections.emptyList;
 
@@ -54,7 +52,7 @@ public class Hand {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Hand hand = (Hand) o;
-        return Objects.equals(cards, hand.cards);
+        return new HashSet<>(cards).equals(new HashSet<>(hand.cards));
     }
 
     @Override

@@ -1,9 +1,11 @@
 package wonderland.alice;
 
-import wonderland.alice.component.Deck;
 import wonderland.alice.component.Player;
 import wonderland.alice.component.board.Board;
+import wonderland.alice.component.deck.Deck;
 import wonderland.alice.component.strategy.Play;
+import wonderland.alice.state.NoPlayerState;
+import wonderland.alice.state.State;
 import wonderland.alice.util.Pair;
 
 public class Game {
@@ -11,7 +13,7 @@ public class Game {
     State currentState;
 
     public Game(Deck deck) {
-        this.currentState = new State(null, this, null, null, Board.createEmptyBoard(), deck);
+        this.currentState = new NoPlayerState(this, null, Board.createEmptyBoard(), deck);
     }
 
     public Player assignSeat(Player player) {
@@ -29,6 +31,10 @@ public class Game {
 
     public void show() {
         currentState.show();
+    }
+
+    public boolean isEnded() {
+        return currentState.board.isFull();
     }
 
     public Player dealCardTo(Player player) {

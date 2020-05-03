@@ -40,20 +40,11 @@ public class Board {
     }
 
     public void show() {
-        for (int currentRow = 0; currentRow < ROW_COUNT; currentRow++) {
-            printRowLine();
-            for (int currentColumn = 0; currentColumn < COLUMN_COUNT; currentColumn++) {
-                System.out.print(String.format("|%-20s", board[currentRow][currentColumn]));
-            }
-            System.out.println("|");
-        }
+        new SystemOut(this).show();
     }
 
-    private void printRowLine() {
-        for (int i = 0; i < getColumnCount(); i++) {
-            System.out.print("+--------------------");
-        }
-        System.out.println("+");
+    public Card inspect(int row, int column) {
+        return board[row][column];
     }
 
     public int getRowCount() {
@@ -64,4 +55,7 @@ public class Board {
         return COLUMN_COUNT;
     }
 
+    public boolean isFull() {
+        return cardCount == ROW_COUNT * COLUMN_COUNT;
+    }
 }
