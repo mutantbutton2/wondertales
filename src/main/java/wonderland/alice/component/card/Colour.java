@@ -5,7 +5,8 @@ import wonderland.alice.util.AsciiColour;
 public enum Colour {
 
     BLUE(AsciiColour.ANSI_BLUE),
-    RED(AsciiColour.ANSI_RED);
+    RED(AsciiColour.ANSI_RED),
+    BLANK(AsciiColour.ANSI_WHITE);
 
     private final String asciiColour;
 

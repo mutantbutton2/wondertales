@@ -5,11 +5,11 @@ import java.util.Set;
 
 public class Node<T> {
 
-    final T value;
-    Node<T> top;
-    Node<T> bottom;
-    Node<T> right;
-    Node<T> left;
+    public final T value;
+    public Node<T> top;
+    public Node<T> bottom;
+    public Node<T> right;
+    public Node<T> left;
 
     public Node(T value) {
         this.value = value;
