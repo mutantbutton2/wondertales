@@ -17,14 +17,14 @@ public class BoardNodeConverter {
 
         for (int row = 0; row < result.length; row++) {
             for (int column = 0; column < result[0].length; column++) {
-                result[row][column] = new Slot(new Node<>(emptyCard()));
+                result[row][column] = new Slot(new Node(emptyCard()));
             }
         }
 
         for (int row = 0; row < board.length; row++) {
             for (int column = 0; column < board[0].length; column++) {
                 if (board[row][column] != null) {
-                    result[row][column] = new Slot(new Node<>(board[row][column]));
+                    result[row][column] = new Slot(new Node(board[row][column]));
                 }
             }
         }

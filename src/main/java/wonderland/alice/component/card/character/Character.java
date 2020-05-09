@@ -1,11 +1,16 @@
 package wonderland.alice.component.card.character;
 
+import wonderland.alice.scoring.CardStrategyVisitor;
+import wonderland.alice.scoring.ScoringStrategy;
+
 public abstract class Character {
 
     @Override
     public boolean equals(Object obj) {
         return this.getClass().equals(obj.getClass());
     }
+
+    public abstract ScoringStrategy accept(CardStrategyVisitor visitor);
 
     @Override
     public int hashCode() {

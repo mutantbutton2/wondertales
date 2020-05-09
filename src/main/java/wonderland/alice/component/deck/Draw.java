@@ -4,9 +4,6 @@ import wonderland.alice.component.card.character.Character;
 import wonderland.alice.component.card.character.*;
 import wonderland.alice.util.Pair;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Draw implements Deck {
 
     private final Character character;
@@ -31,9 +28,9 @@ public class Draw implements Deck {
                 .addCard(new Grandma())
                 .addCard(new Gretel())
                 .addCard(new Hansel())
-                .addCard(new LittlePig())
-                .addCard(new LittlePig())
-                .addCard(new LittlePig())
+                .addCard(new LittlePigOne())
+                .addCard(new LittlePigOne())
+                .addCard(new LittlePigOne())
                 .addCard(new LittleRedRidingHood())
                 .addCard(new MamaBear())
                 .addCard(new PapaBear())

@@ -4,9 +4,9 @@ import wonderland.alice.component.card.Card;
 
 public class Slot {
 
-    final Node<Card> cardNode;
+    final Node cardNode;
 
-    public Slot(Node<Card> cardNode) {
+    public Slot(Node cardNode) {
         this.cardNode = cardNode;
     }
 

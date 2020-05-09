@@ -2,6 +2,7 @@ package wonderland.alice.component.card;
 
 import wonderland.alice.component.card.character.Character;
 import wonderland.alice.component.card.character.Empty;
+import wonderland.alice.matcher.CardMatcher;
 
 import java.util.Objects;
 
@@ -9,8 +10,8 @@ import static wonderland.alice.component.card.Colour.BLANK;
 
 public class Card {
 
-    private final Colour colour;
-    private final Character character;
+    public final Colour colour;
+    public final Character character;
 
     public static Card emptyCard() {
         return new Card(BLANK, new Empty());
@@ -24,6 +25,10 @@ public class Card {
     @Override
     public String toString() {
         return colour.wrapText(String.format("%-20s",character.toString()));
+    }
+
+    public boolean match(CardMatcher cardMatcher) {
+        return cardMatcher.match(this);
     }
 
     @Override
