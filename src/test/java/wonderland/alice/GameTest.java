@@ -10,6 +10,10 @@ import wonderland.alice.component.card.character.BigBadWolf;
 import wonderland.alice.component.deck.DeckBuilder;
 import wonderland.alice.component.deck.Draw;
 import wonderland.alice.component.strategy.FirstCardStrategy;
+import wonderland.alice.scoring.BoardNodeConverter;
+import wonderland.alice.scoring.GameScorer;
+import wonderland.alice.scoring.Slot;
+import wonderland.alice.util.Pair;
 
 import java.util.List;
 
@@ -116,6 +120,11 @@ public class GameTest {
         player1 = player1.play(new FirstCardStrategy(game.currentState));
 
         game.show();
+
+        final Slot[][] slots = new BoardNodeConverter(game.currentState.board.board).convert();
+        Pair<Integer, Integer> result = new GameScorer().calculate(slots);
+        System.out.println("Red: " + result.left);
+        System.out.println("Blue: " + result.right);
 
     }
 }

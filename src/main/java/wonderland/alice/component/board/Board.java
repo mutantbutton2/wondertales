@@ -8,7 +8,7 @@ public class Board {
     private static final int COLUMN_COUNT = 3;
 
     private final int cardCount;
-    private final Card[][] board;
+    public final Card[][] board;
 
     public static Board createEmptyBoard() {
         return new Board(new Card[ROW_COUNT][COLUMN_COUNT], 0);
